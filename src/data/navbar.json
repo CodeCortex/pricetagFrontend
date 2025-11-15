@@ -1,0 +1,14 @@
+{
+    "logo":"/logo.png",
+    "links":[
+        {"name":"HOME", "path":"/"},
+        {"name":"PROJECTS", "path":"projects"},
+        {"name":"SITE AGENT", "path":"siteAgent"},
+        {"name":"OWNERS", "path":"owners"},
+        {"name":"VALUATION", "path":"valuation"}
+    ],
+    "cta":{
+        "text":"Sing In",
+        "path":"/login"
+    }
+}
