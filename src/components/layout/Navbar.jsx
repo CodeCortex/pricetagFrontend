@@ -11,7 +11,7 @@ const Navbar = () => {
         }
     }
     return (
-        <nav className='px-3 py-3 w-full flex justify-between items-center bg-gradient-to-r from-white from-[0%] to-orange to-[83%]'>
+        <nav className='px-3 py-3 sticky top-0 z-20 w-full flex justify-between items-center bg-gradient-to-r from-white from-[0%] to-orange to-[83%]'>
             <Link className='pl-6' to="/"><img className='h-12 w-auto object-contain' alt="logo" src={navbarData.logo}/></Link>
             <div>
                 <ul className='flex justify-around gap-4'>

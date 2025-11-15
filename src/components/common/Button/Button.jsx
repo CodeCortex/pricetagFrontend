@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({ text, onClick, type = "button", className = "", children }) => {
+export const Button = ({ text, onClick, type = "button", className = "", children }) => {
     return (
         <button
             type={type}
@@ -12,4 +12,16 @@ const Button = ({ text, onClick, type = "button", className = "", children }) =>
     )
 }
 
-export default Button;
+
+export const GradientButton=({text, onClick, type="button", children, className=""})=>{
+    return(
+        <button
+        type={type}
+        onClick={onClick}
+        className={`px-4 py-2 rounded-sm bg-gradient-to-r from-white to-orange transition-all duration-300 shadow-2xl text-black hover:text-white hover:bg-orange hover:bg-none ${className}`}
+        >
+            {children|| text}
+            
+        </button>
+    )
+}

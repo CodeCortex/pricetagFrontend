@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Input from './Input';
-import Button from '../Button/Button';
+import {Button} from '../Button/Button';
 
 const SearchBar = ({ placeholder = "Search...", buttonText = "Search", onSearch, className = "", inputClass = "" }) => {
 
