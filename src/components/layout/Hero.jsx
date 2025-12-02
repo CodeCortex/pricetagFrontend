@@ -141,11 +141,6 @@ const Hero = () => {
 
             <UnderConstruction />
             <Footer />
-
-
-
-
-
         </div>
     )
 }
