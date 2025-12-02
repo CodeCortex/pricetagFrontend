@@ -10,6 +10,7 @@ import Mapping from './Mapping'
 import FeaturePic from "../../assets/images/FeaturePic.png"
 import { GradientButton } from '../common/Button/Button'
 import UnderConstruction from './UnderConstruction'
+import Footer from './Footer'
 
 
 
@@ -125,6 +126,7 @@ const Hero = () => {
             </section>
 
             <UnderConstruction/>
+            <Footer/>
 
 
 
