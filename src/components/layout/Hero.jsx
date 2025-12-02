@@ -2,7 +2,7 @@ import React from 'react'
 import heroBackground from "../../assets/images/heroBackground.png"
 import Navbar from './Navbar'
 import SearchBar from '../common/Input/SearchBar'
-import HeroCategoriesList from '../common/Card/HeroCategoriesList'
+import { HeroCategoriesList } from '../common/Card/HeroCategoriesList'
 import Flat1 from "../../assets/images/Flat1.png"
 import Shop1 from "../../assets/images/Shop1.png"
 import Land1 from "../../assets/images/Land1.png"
@@ -11,6 +11,7 @@ import FeaturePic from "../../assets/images/FeaturePic.png"
 import { GradientButton } from '../common/Button/Button'
 import UnderConstruction from './UnderConstruction'
 import Footer from './Footer'
+import { PropertyValuationCategoriesCard } from '../common/Card/HeroCategoriesList'
 
 
 
@@ -125,8 +126,21 @@ const Hero = () => {
                 </div>
             </section>
 
-            <UnderConstruction/>
-            <Footer/>
+            <section id="#PropertyValuation" className='px-20'>
+                <div>
+                    <h1 className='text-5xl text-start font-bold py-12'>Property Valuation</h1>
+                </div>
+                <PropertyValuationCategoriesCard />
+            </section>
+
+
+            <section id="#testimonials" className="px-20 pt-10">
+                <div className="h-[500px] bg-[#F2F6FF]"></div>
+            </section>
+
+
+            <UnderConstruction />
+            <Footer />
 
 
 

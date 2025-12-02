@@ -61,7 +61,7 @@ const Footer = () => {
 
             {/* Bottom Section */}
             <div className="py-4 flex flex-col md:flex-row justify-between items-center text-sm">
-                <p>© {new Date().getFullYear()} Powered by PriceTagPrice</p>
+                <p>© {new Date().getFullYear()} Powered by PropertyPriceTag</p>
                 <p className="flex gap-4 mt-2 md:mt-0">
                     <span className="cursor-pointer hover:text-white">Privacy Policy</span> |
                     <span className="cursor-pointer hover:text-white">Terms & Conditions</span>
