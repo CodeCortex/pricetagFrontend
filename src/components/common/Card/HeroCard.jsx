@@ -50,3 +50,61 @@ export const PropertyValuationCard = ({image, title, details, price, onClick}) =
 
 }
 
+
+// export const RecentlyAddedProperties= ()=>{
+
+//   return(
+//     <div className=''>
+      
+
+//     </div>
+//   )
+// }
+
+
+
+export const RecentlyAddedProperties = ({
+  city,
+  image,
+  bedrooms,
+  bathrooms,
+  carports,
+  area,
+  price,
+}) => {
+  return (
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+
+      {/* Image */}
+      <img
+        src={image}
+        alt={city}
+        className="w-full h-56 object-cover"
+      />
+
+      {/* Content */}
+      <div className="p-6">
+        <h3 className="text-2xl font-bold mb-4">{city}</h3>
+
+        <div className="grid grid-cols-2 gap-y-3 text-gray-700 text-sm">
+          <p>{bedrooms} Bedrooms</p>
+          <p>{carports} Carports</p>
+          <p>{bathrooms} Bathrooms</p>
+          <p>{area}</p>
+        </div>
+
+        <hr className="my-4" />
+
+        <div className="flex justify-between items-center">
+          <p className="text-lg font-semibold">{price}</p>
+
+          <button className="flex items-center gap-1 font-semibold hover:text-orange-500 transition">
+            Read More
+            <span className="text-xl">›</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+

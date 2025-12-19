@@ -13,6 +13,7 @@ import UnderConstruction from './UnderConstruction'
 import Footer from './Footer'
 import { PropertyValuationCategoriesCard } from '../common/Card/HeroCategoriesList'
 import Testmonial from "../../../src/assets/images/Testimonial.png"
+import { RecentlyAddedPropertiesCard } from '../common/Card/HeroCategoriesList'
 
 
 
@@ -203,6 +204,16 @@ const Hero = () => {
 
                 </div>
             </section>
+
+
+            <section id="#recentlyAddedProperties" className='px-20'>
+                <div>
+                    <h1 className='text-5xl text-start font-bold py-12'>Recently Added Properties</h1>
+                </div>
+                <RecentlyAddedPropertiesCard />
+            </section>
+
+
 
 
             <UnderConstruction />

@@ -7,6 +7,7 @@ import PropertyValuationCardImage from "../../../assets/images/PropertyValuation
 
 import { Herocard } from './Herocard'
 import { PropertyValuationCard } from './Herocard'
+import { RecentlyAddedProperties } from './Herocard'
 import { HandHelping } from 'lucide-react'
 
 
@@ -81,4 +82,73 @@ export const PropertyValuationCategoriesCard = () => {
     
 
 }
+
+
+
+
+
+
+
+
+// export const RecentlyAddedPropertiesCard=()=>{
+//     return(
+//         <div>
+
+//         </div>
+//     )
+// }
+
+
+
+
+
+export const RecentlyAddedPropertiesCard = () => {
+    const properties = [
+  {
+    city: "PUNE",
+    image: "/src/assets/images/recentlyAdded.png", 
+    bedrooms: 4,
+    bathrooms: 2,
+    carports: 2,
+    area: "450m2",
+    price: "$450,000",
+  },
+  {
+    city: "Nagpur",
+    image: "/src/assets/images/recentlyAdded.png",
+    bedrooms: 4,
+    bathrooms: 2,
+    carports: 2,
+    area: "450m2",
+    price: "$450,000",
+  },
+  {
+    city: "Nagpur",
+    image: "/src/assets/images/recentlyAdded.png",
+    bedrooms: 4,
+    bathrooms: 2,
+    carports: 2,
+    area: "450m2",
+    price: "$450,000",
+  },
+];
+  return (
+    <section className="px-20 py-16 bg-white">
+      <h2 className="text-4xl font-bold mb-10">Recently Added Properties</h2>
+
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {properties.map((item, index) => (
+          <RecentlyAddedProperties key={index} {...item} />
+        ))}
+      </div>
+
+      {/* Slider Indicator */}
+      <div className="flex justify-center gap-3 mt-10">
+        <span className="w-10 h-1 bg-orange-500 rounded-full"></span>
+        <span className="w-10 h-1 bg-gray-300 rounded-full"></span>
+      </div>
+    </section>
+  );
+};
 
