@@ -12,6 +12,7 @@ import { GradientButton } from '../common/Button/Button'
 import UnderConstruction from './UnderConstruction'
 import Footer from './Footer'
 import { PropertyValuationCategoriesCard } from '../common/Card/HeroCategoriesList'
+import Testmonial from "../../../src/assets/images/Testimonial.png"
 
 
 
@@ -22,7 +23,7 @@ const Hero = () => {
     }
 
     const check = () => {
-        alert("rajan Jaiswal");
+        alert("Roshan Jaiswal");
     }
     return (
         <div className=''>
@@ -134,8 +135,73 @@ const Hero = () => {
             </section>
 
 
-            <section id="#testimonials" className="px-20 pt-10">
-                <div className="h-[500px] bg-[#F2F6FF]"></div>
+            <section id="#testimonials" className="px-20 py-6 mt-10 bg-[#F2F6FF]">
+
+                <div className="max-w-7xl mx-auto gap-12 items-center flex p-20">
+                    <div className='w-1/2 pr-8'>
+                        <p className='text-xl text-orange text-start font-bold mb-2 '>Reviews</p>
+                        <p className='text-5xl text-start font-bold py-4'>Testimonials</p>
+                        <p className='text-sm text-justify pb-6 text-gray-600'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+
+                        {/* Testmonial card */}
+                        <div className='bg-white rounded-lg max-w-lg p-6 shadow-2xl' >
+                            <div className="flex gap-1 text-orange">
+                                {[...Array(5)].map((_, i) => (
+                                    <svg
+                                        key={i}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        className="w-5 h-5"
+                                    >
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.286 3.974c.3.921-.755 1.688-1.538 1.118l-3.38-2.455a1 1 0 00-1.176 0l-3.38 2.455c-.783.57-1.838-.197-1.538-1.118l1.286-3.974a1 1 0 00-.364-1.118L2 9.401c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.974z" />
+                                    </svg>
+                                ))}
+                            </div>
+
+                            <p className='mt-4 text-gray-700 text-justify'>Working with Realty was a dream come true! We found our perfect home faster than we expected, and the process was smooth from start to finish.</p>
+
+                            {/* User Info */}
+                            <div className="flex items-center pt-10 gap-4">
+                                <img
+                                    src="/src/assets/images/user.jpg"    // replace with actual image path
+                                    alt="Roshan Jaiswal"
+                                    className="w-12 h-12 rounded-full object-cover"
+                                />
+
+                                <div>
+                                    <p className="font-semibold text-gray-900 leading-tight">
+                                        Roshan Jaiswal
+                                    </p>
+                                    <p className="text-sm text-gray-500">
+                                        Google
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* Right image */}
+                    <div className='w-1/2 relative flex justify-end'>
+                        <img src={Testmonial} alt="testimonial image" className='w-[80%] rounded-lg shadow-2xl object-cover' />
+
+                        <div className="absolute bottom-8  right-8 bg-white/90 p-4 rounded-lg shadow-md flex items-center gap-3">
+                            <div className="text-orange text-3xl">🏠</div>
+                            <div>
+                                <p className="font-semibold">Happy Clients</p>
+                                <p className="text-sm text-gray-600">
+                                    Lorem ipsum dolor sit amet.
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
             </section>
 
 
