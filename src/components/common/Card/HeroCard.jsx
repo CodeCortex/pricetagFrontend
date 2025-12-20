@@ -73,7 +73,7 @@ export const RecentlyAddedProperties = ({
   price,
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+    <div className=" bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
 
       {/* Image */}
       <img
@@ -84,13 +84,13 @@ export const RecentlyAddedProperties = ({
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-4">{city}</h3>
+        <h3 className="text-2xl  font-bold mb-4">{city}</h3>
 
-        <div className="grid grid-cols-2 gap-y-3 text-gray-700 text-sm">
-          <p>{bedrooms} Bedrooms</p>
-          <p>{carports} Carports</p>
-          <p>{bathrooms} Bathrooms</p>
-          <p>{area}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 text-gray-600 text-sm">
+          <p className='font-bold'>{bedrooms} Bedrooms</p>
+          <p className='font-bold'>{carports} Carports</p>
+          <p className='font-bold'>{bathrooms} Bathrooms</p>
+          <p className='font-bold'>{area}</p>
         </div>
 
         <hr className="my-4" />

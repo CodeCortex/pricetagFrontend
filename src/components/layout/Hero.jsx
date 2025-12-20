@@ -206,9 +206,9 @@ const Hero = () => {
             </section>
 
 
-            <section id="#recentlyAddedProperties" className='px-20'>
+            <section id="#recentlyAddedProperties" className='px-20 py-6 mt-10'>
                 <div>
-                    <h1 className='text-5xl text-start font-bold py-12'>Recently Added Properties</h1>
+                    <h1 className='text-5xl text-start font-bold py-4'>Recently Added Properties</h1>
                 </div>
                 <RecentlyAddedPropertiesCard />
             </section>
