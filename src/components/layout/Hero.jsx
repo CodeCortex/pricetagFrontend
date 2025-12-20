@@ -6,6 +6,7 @@ import { HeroCategoriesList } from '../common/Card/HeroCategoriesList'
 import Flat1 from "../../assets/images/Flat1.png"
 import Shop1 from "../../assets/images/Shop1.png"
 import Land1 from "../../assets/images/Land1.png"
+import RecentlyAdded from "../../assets/images/RecentlyAdded.png"
 import Mapping from './Mapping'
 import FeaturePic from "../../assets/images/FeaturePic.png"
 import { GradientButton } from '../common/Button/Button'
@@ -165,7 +166,7 @@ const Hero = () => {
                             {/* User Info */}
                             <div className="flex items-center pt-10 gap-4">
                                 <img
-                                    src="/src/assets/images/user.jpg"    // replace with actual image path
+                                    src={RecentlyAdded}    // replace with actual image path
                                     alt="Roshan Jaiswal"
                                     className="w-12 h-12 rounded-full object-cover"
                                 />
