@@ -7,6 +7,9 @@ import Flat1 from "../../assets/images/Flat1.png"
 import Shop1 from "../../assets/images/Shop1.png"
 import Land1 from "../../assets/images/Land1.png"
 import RecentlyAdded from "../../assets/images/RecentlyAdded.png"
+import User from "../../assets/images/user.jpg"
+import Contact from './Contact'
+
 import Mapping from './Mapping'
 import FeaturePic from "../../assets/images/FeaturePic.png"
 import { GradientButton } from '../common/Button/Button'
@@ -15,11 +18,14 @@ import Footer from './Footer'
 import { PropertyValuationCategoriesCard } from '../common/Card/HeroCategoriesList'
 import Testmonial from "../../../src/assets/images/Testimonial.png"
 import { RecentlyAddedPropertiesCard } from '../common/Card/HeroCategoriesList'
+import FAQSection from './FAQSection'
 
 
 
 
 const Hero = () => {
+
+
     const searchHandler = (query) => {
         alert("Roshan Jaiswal: " + query);
     }
@@ -27,6 +33,8 @@ const Hero = () => {
     const check = () => {
         alert("Roshan Jaiswal");
     }
+
+    
     return (
         <div className=''>
             <Navbar />
@@ -166,7 +174,7 @@ const Hero = () => {
                             {/* User Info */}
                             <div className="flex items-center pt-10 gap-4">
                                 <img
-                                    src={RecentlyAdded}    // replace with actual image path
+                                    src={User}    // replace with actual image path
                                     alt="Roshan Jaiswal"
                                     className="w-12 h-12 rounded-full object-cover"
                                 />
@@ -213,6 +221,19 @@ const Hero = () => {
                 </div>
                 <RecentlyAddedPropertiesCard />
             </section>
+
+
+
+            <section id="#faq" className='px-6 md:px-20 py-6 mt-10 bg-[#F2F6FF]'>
+                <FAQSection/>
+            </section>
+
+            <section id="#contact" className='px-6 md:px-20 py-6 mt-10 bg-gray-400 max-w-7xl mx-auto h-60 rounded-2xl shadow-2xl'>
+                <Contact/>
+            </section>
+
+
+
 
 
 

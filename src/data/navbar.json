@@ -3,9 +3,12 @@
     "links":[
         {"name":"HOME", "path":"#home"},
         {"name":"PROJECTS", "path":"#projects"},
+        {"name":"VALUATION", "path":"#PropertyValuation"},
+        {"name":"PROPERTIES","path":"#recentlyAddedProperties"},
+        {"name":"CONTACT","path":"#contact"},
         {"name":"SITE AGENT", "path":"siteAgent"},
-        {"name":"OWNERS", "path":"owners"},
-        {"name":"VALUATION", "path":"valuation"}
+        {"name":"OWNERS", "path":"owners"}
+        
     ],
     "cta":{
         "text":"Sing In",

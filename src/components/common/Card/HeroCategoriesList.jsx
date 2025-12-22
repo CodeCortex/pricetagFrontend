@@ -4,6 +4,7 @@ import Land from "../../../assets/images/Land.png"
 import Shop from "../../../assets/images/Shop.png"
 import Flat from "../../../assets/images/Flat.png"
 import PropertyValuationCardImage from "../../../assets/images/PropertyValuationCardImage.png"
+import RecentlyAdded from "../../../assets/images/RecentlyAdded.png"
 
 import { Herocard } from './Herocard'
 import { PropertyValuationCard } from './Herocard'
@@ -106,7 +107,7 @@ export const RecentlyAddedPropertiesCard = () => {
     const properties = [
   {
     city: "PUNE",
-    image: "/src/assets/images/RecentlyAdded.png", 
+    image: RecentlyAdded, 
     bedrooms: 4,
     bathrooms: 2,
     carports: 2,
@@ -115,7 +116,7 @@ export const RecentlyAddedPropertiesCard = () => {
   },
   {
     city: "Nagpur",
-    image: "/src/assets/images/RecentlyAdded.png",
+    image: RecentlyAdded,
     bedrooms: 4,
     bathrooms: 2,
     carports: 2,
@@ -124,7 +125,7 @@ export const RecentlyAddedPropertiesCard = () => {
   },
   {
     city: "Nagpur",
-    image: "/src/assets/images/RecentlyAdded.png",
+    image: RecentlyAdded,
     bedrooms: 4,
     bathrooms: 2,
     carports: 2,
@@ -133,7 +134,7 @@ export const RecentlyAddedPropertiesCard = () => {
   },
   {
     city: "Nagpur",
-    image: "/src/assets/images/RecentlyAdded.png",
+    image: RecentlyAdded,
     bedrooms: 4,
     bathrooms: 2,
     carports: 2,
@@ -142,7 +143,7 @@ export const RecentlyAddedPropertiesCard = () => {
   },
   {
     city: "Nagpur",
-    image: "/src/assets/images/RecentlyAdded.png",
+    image: RecentlyAdded,
     bedrooms: 4,
     bathrooms: 2,
     carports: 2,
@@ -151,7 +152,7 @@ export const RecentlyAddedPropertiesCard = () => {
   },
   {
     city: "Nagpur",
-    image: "/src/assets/images/RecentlyAdded.png",
+    image: RecentlyAdded,
     bedrooms: 4,
     bathrooms: 2,
     carports: 2,
