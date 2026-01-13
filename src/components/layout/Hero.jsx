@@ -228,9 +228,11 @@ const Hero = () => {
                 <FAQSection/>
             </section>
 
-            <section id="#contact" className='px-6 md:px-20 py-6 mt-10 bg-gray-400 max-w-7xl mx-auto h-60 rounded-2xl shadow-2xl'>
+            {/* <section id="#contact" className=''>
                 <Contact/>
-            </section>
+            </section> */}
+
+            <Contact/>
 
 
 
@@ -238,7 +240,7 @@ const Hero = () => {
 
 
 
-            <UnderConstruction />
+         
             <Footer />
         </div>
     )

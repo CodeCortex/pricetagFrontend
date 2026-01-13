@@ -5,9 +5,8 @@
         {"name":"PROJECTS", "path":"#projects"},
         {"name":"VALUATION", "path":"#PropertyValuation"},
         {"name":"PROPERTIES","path":"#recentlyAddedProperties"},
-        {"name":"CONTACT","path":"#contact"},
-        {"name":"SITE AGENT", "path":"siteAgent"},
-        {"name":"OWNERS", "path":"owners"}
+        {"name":"CONTACT","path":"#contact"}
+     
         
     ],
     "cta":{
