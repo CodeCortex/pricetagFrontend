@@ -7,7 +7,7 @@ const API= axios.create({
 
 
 export const registerAgent=(data)=>{
-    API.post("/agents/register", data);
+    return API.post("/agents/register", data);
 }
 
 export const loginUser =(data)=>{

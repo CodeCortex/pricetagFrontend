@@ -68,7 +68,7 @@ const Login = () => {
 
       showToast("success", response.message || "Login successful")
 
-      response.data.role==="ADMIN"
+      response.data.role ==="ADMIN"
         ? navigate("/admin/dashboard")
         : navigate("/agent/dashboard");
       
