@@ -8,9 +8,13 @@ import { showToast } from '../../utils/customToast.js';
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { PcCase } from 'lucide-react';
 
+import SimpleNavbar from '../../components/layout/SimpleNavbar.jsx';
+
+
 
 
 const Login = () => {
+
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -45,36 +49,36 @@ const Login = () => {
 
       if (form.identifier.includes("@gmail.com")) {
         payload.email = form.identifier;
-      } else if (/^\d+$/.test(form.identifier)) {
+      } else if (/^\d{10}$/.test(form.identifier)) {
         payload.contactNo = form.identifier;
       } else
         payload.userName = form.identifier;
 
 
       const res = await loginAuth(payload);
-      const data = res.data.data;
+      const response = res.data;
+      console.log("Roshan Jaiswal ----- response ----", response);
 
-      console.log(data);
 
-      remember? localStorage.setItem("accessToken", data.accessToken):sessionStorage.setItem("accessToken",data.accessToken);
 
-       localStorage.setItem("role",data.role);
 
-      showToast("success", "Login successful")
+      remember ? localStorage.setItem("accessToken", response.data.accessToken) : sessionStorage.setItem("accessToken", response.data.accessToken);
 
-      data.role==="ADMIN"
+      localStorage.setItem("role", response.data.role);
+
+      showToast("success", response.message || "Login successful")
+
+      response.data.role==="ADMIN"
         ? navigate("/admin/dashboard")
         : navigate("/agent/dashboard");
+      
 
 
     } catch (err) {
-      console.log(err);
-      showToast("error", err.response?.message || "Login failed");
+      showToast("error", err.response?.data?.message || "Login failed");
     } finally {
       setLoading(false);
     }
-
-
   }
 
 
@@ -84,6 +88,9 @@ const Login = () => {
 
 
   return (
+    <>
+    <SimpleNavbar/>
+  
     <div className='max-w-md mx-auto mt-20 p-6 shadow-2xl rounded '>
       <h2 className="text-xl font-bold mb-4 text-orange">Login</h2>
 
@@ -111,7 +118,7 @@ const Login = () => {
         </div>
 
         <div className='flex items-center gap-2 text-orange'>
-          <input type='checkbox' checked={remember} className='accent-orange' onChange={()=>setRemember(!remember)}/>
+          <input type='checkbox' checked={remember} className='accent-orange' onChange={() => setRemember(!remember)} />
           <span>Remember me</span>
         </div>
 
@@ -123,16 +130,13 @@ const Login = () => {
 
 
 
-        <Button type='submit' children={loading?"Logging in...":"Continue"} className='w-full' />
+        <Button type='submit' children={loading ? "Logging in..." : "Continue"} className='w-full' />
 
 
       </form>
 
-
-
-
-
     </div>
+     </>
   )
 }
 

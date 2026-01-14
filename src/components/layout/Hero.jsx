@@ -23,6 +23,7 @@ import FAQSection from './FAQSection'
 
 
 
+
 const Hero = () => {
 
 
@@ -240,8 +241,10 @@ const Hero = () => {
 
 
 
+
          
             <Footer />
+          
         </div>
     )
 }

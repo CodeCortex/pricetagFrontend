@@ -15,5 +15,5 @@ export const loginUser =(data)=>{
 }
 
 export const loginAuth= (data)=>{
-    API.post("/auth/login", data);
+    return API.post("/auth/login", data);
 }
