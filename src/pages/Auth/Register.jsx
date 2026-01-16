@@ -2,13 +2,19 @@ import React from 'react'
 import Input from '../../components/common/Input/Input';
 import SimpleNavbar from '../../components/layout/SimpleNavbar';
 import { Button } from '../../components/common/Button/Button';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { registerAgent } from '../../api/auth';
 import { showToast } from '../../utils/customToast';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 
 const Register = () => {
+
+  const formRef = useRef();
+  const navigate = useNavigate();
+
 
   const [form, setForm] = useState({
     fullName: "",
@@ -24,6 +30,9 @@ const Register = () => {
   const [show, setShow] = useState(false);
   const [preview, setPreview] = useState(null);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -42,6 +51,8 @@ const Register = () => {
       setForm({ ...form, [name]: value })
     }
   }
+
+
 
   // password strength
   const getStrength = () => {
@@ -91,12 +102,28 @@ const Register = () => {
 
 
     try {
+      setLoading(true);
       const res = await registerAgent(fd);
       showToast("success", res.data.message || "Registered successfully!");
+      navigate("/login");
+
+      formRef.current.reset();
+      setForm({
+        fullName: "",
+        userName: "",
+        email: "",
+        contactNo: "",
+        designation: "",
+        password: "",
+        confirmPassword: "",
+        avatar: null
+      });
 
     } catch (err) {
-      console.err(err.response?.data?.message || "Registration failed");
+      console.error(err.response?.data?.message || "Registration failed");
       showToast("error", err.response?.data?.message || "Registration failed");
+    } finally {
+      setLoading(false);
     }
 
   }
@@ -110,7 +137,7 @@ const Register = () => {
         <h2 className='text-xl font-bold mb-4 text-orange'>Agent Register</h2>
         {error && <p className="text-red-600 mb-2">{error}</p>}
 
-        <form onSubmit={submit} className='space-y-3'>
+        <form ref={formRef} onSubmit={submit} className='space-y-3'>
 
           {
             ["fullName", "userName", "email", "contactNo", "designation"].map(f => (
@@ -118,7 +145,7 @@ const Register = () => {
                 key={f}
                 name={f}
                 placeholder={f}
-                label={f}
+                // label={f}
                 value={form[f]}
                 onChange={handleChange}
                 className='w-full'
@@ -129,14 +156,14 @@ const Register = () => {
           <div className="relative">
             <Input
               name="password"
-              label="password"
+              // label="password"
               type={show ? "text" : "password"}
               placeholder="Password"
               onChange={handleChange}
               className="w-full border p-2"
             />
             <span
-              className="absolute right-3 top-10 cursor-pointer"
+              className="absolute right-3 top-3 cursor-pointer"
               onClick={() => setShow(!show)}
             >
               {show ? <FiEyeOff /> : <FiEye />}
@@ -159,7 +186,7 @@ const Register = () => {
           {/* CONFIRM */}
           <Input
             name="confirmPassword"
-            label="confirmPassword"
+            // label="confirmPassword"
             type="password"
             placeholder="Confirm Password"
             onChange={handleChange}
@@ -181,7 +208,7 @@ const Register = () => {
                   accept="image/*"
                   onChange={handleChange}
                   className="hidden"
-                  required
+
                 />
               </label>
 
@@ -204,9 +231,10 @@ const Register = () => {
 
           <Button
             type="submit"
-            className="w-full bg-orange text-white py-2 rounded-md font-semibold hover:bg-orange-600 transition"
+            disabled={loading}
+            className={`w-full bg-orange text-white py-2 rounded-md font-semibold hover:bg-orange-600 transition ${loading?"opacity-60 cursor-not-allowed" : "hover:bg-orange-600"}`}
           >
-            Register
+            {loading ? "Registering...." : "Register"}
           </Button>
 
         </form>

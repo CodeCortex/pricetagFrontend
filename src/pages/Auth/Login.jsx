@@ -94,7 +94,7 @@ const Login = () => {
     <div className='max-w-md mx-auto mt-20 p-6 shadow-2xl rounded '>
       <h2 className="text-xl font-bold mb-4 text-orange">Login</h2>
 
-      <form onSubmit={submit} className='space-y-4'>
+      <form onSubmit={submit} autoComplete='off' className='space-y-4'>
         <Input
           name="identifier"
           placeholder="Email / Username / Contact"
@@ -124,7 +124,8 @@ const Login = () => {
 
 
 
-        <Link to='/forgot-password'><p className='text-start text-blue-600 cursor-pointer hover:text-blue-800 py-2'>Forgot Password?</p></Link>
+
+        <p className='text-start text-blue-600 cursor-pointer hover:text-blue-800'><Link to='/forgot-password'>Forgot Password?</Link></p>
 
         <p>New Agent?{" "} <Link to="/register"><span className='text-blue-600 cursor-pointer hover:text-blue-800 font-semibold'>Register Here</span></Link></p>
 
