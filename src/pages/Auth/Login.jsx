@@ -47,7 +47,7 @@ const Login = () => {
       setLoading(true);
       const payload = { password: form.password };
 
-      if (form.identifier.includes("@gmail.com")) {
+      if (/^\S+@\S+\.\S+$/.test(form.identifier)) {
         payload.email = form.identifier;
       } else if (/^\d{10}$/.test(form.identifier)) {
         payload.contactNo = form.identifier;
@@ -65,12 +65,13 @@ const Login = () => {
       remember ? localStorage.setItem("accessToken", response.data.accessToken) : sessionStorage.setItem("accessToken", response.data.accessToken);
 
       localStorage.setItem("role", response.data.role);
+      localStorage.setItem("userId", response.data.user._id);
 
       showToast("success", response.message || "Login successful")
 
       response.data.role ==="ADMIN"
-        ? navigate("/admin/dashboard")
-        : navigate("/agent/dashboard");
+        ? navigate(`/admin/${response.data.user._id}`)
+        : navigate(`/agent/${response.data.user._id}`);
       
 
 
@@ -94,7 +95,7 @@ const Login = () => {
     <div className='max-w-md mx-auto mt-20 p-6 shadow-2xl rounded '>
       <h2 className="text-xl font-bold mb-4 text-orange">Login</h2>
 
-      <form onSubmit={submit} autoComplete='off' className='space-y-4'>
+      <form onSubmit={submit}  className='space-y-4'>
         <Input
           name="identifier"
           placeholder="Email / Username / Contact"
@@ -131,7 +132,7 @@ const Login = () => {
 
 
 
-        <Button type='submit' children={loading ? "Logging in..." : "Continue"} className='w-full' />
+        <Button type='submit' disabled={loading} children={loading ? "Logging in..." : "Continue"} className={`w-full ${loading && "opacity-60 cursor-not-allowed"}`} />
 
 
       </form>
