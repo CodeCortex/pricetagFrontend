@@ -30,9 +30,9 @@ export const PropertyValuationCard = ({image, title, details, price, onClick}) =
  
 
   return (
-    <div className='relative w-full max-w-[360px] mx-auto'>
+    <div className='relative w-full mx-auto'>
       {/* image  */}
-      <div className='h-56 w-full rounded-t-xl bg-cover bg-center' style={{ background: `url(${image})` }}></div>
+      <div className='h-56 w-full rounded-t-xl' style={{ background: `url(${image})` , backgroundSize:"cover", backgroundPosition:"", backgroundRepeat:"no-repeat" }}></div>
 
 
       {/* white card content */}

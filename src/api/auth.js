@@ -17,3 +17,8 @@ export const loginUser =(data)=>{
 export const loginAuth= (data)=>{
     return API.post("/auth/login", data);
 }
+
+
+export const getCurrentUser=(config="")=>{
+    return API.post("/users/current-user", config);
+}
